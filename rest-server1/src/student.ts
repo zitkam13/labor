@@ -1,4 +1,9 @@
 
+export interface IStudent {
+    htlid: string;
+    surname: string;
+    firstname: string;
+}
 export class Student {
 
     private htlid: string;
@@ -21,3 +26,4 @@ export class Student {
     }
 }
 // gleich wie in Java alle Objekte erstellen und danach constructor übergeben und getter Methoden
+// Entwurfsmuster immutable

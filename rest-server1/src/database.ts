@@ -15,7 +15,6 @@ export class Database {
     // ****************************************************** ab jetzt nicht mehr static also betrifft das Objekt
     private students: { [id: string]: Student } = {};
     private constructor () {
-        // this.add({ htlid = 'tutram12', surname = 'Tuttner', firstname = 'Raphael'});
         this.add(new Student( 'tutram12', 'Tuttner', 'Raphael'));
         this.add(new Student( 'zitkam13', 'Zitz', 'Karlheinz'));
     }
@@ -29,7 +28,12 @@ export class Database {
     public get (htlid: string) {
         return this.students[htlid];
     }
-
-
-
+    public remove (htlid: string) {
+        delete this.students[htlid];
+    }
+    public set (s: Student): Student {
+        const rv = this.get(s.getHtlid());
+        this.students[s.getHtlid()] = s;
+        return rv;
+    }
 }
