@@ -39,7 +39,7 @@ export class  Server { // klasse außerhalb verwenden mit export
             console.log(err);
             resp.status(404).send('invalid JSON data');
             resp.end();
-    }
+        }
     }
     private handleDeleteStudent(req: express.Request, resp: express.Response, next: express.NextFunction) {
         try {
@@ -53,7 +53,7 @@ export class  Server { // klasse außerhalb verwenden mit export
             console.log(err);
             resp.status(404).send('invalid JSON data');
             resp.end();
-    }
+        }
     }
     private handlePutStudent (req: express.Request, resp: express.Response, next: express.NextFunction) {
         console.log(req.query.htlid);
@@ -85,19 +85,19 @@ export class  Server { // klasse außerhalb verwenden mit export
         if (s) {
             resp.json(s);
         }
-        switch (req.query.htlid) {
-            case 'tutram12':
-            resp.json({surname: 'Tuttner', firstname: 'Raphael'}); break;
-            case 'zitkam13':
-            resp.json({surname: 'Zitz', firstname: 'Karlheinz'}); break;
-            case 'strlum14':
-            resp.json({surname: 'Strauß', firstname: 'Lukas'}); break;
+        // switch (req.query.htlid) {
+        //     case 'tutram12':
+        //     resp.json({surname: 'Tuttner', firstname: 'Raphael'}); break;
+        //     case 'zitkam13':
+        //     resp.json({surname: 'Zitz', firstname: 'Karlheinz'}); break;
+        //     case 'strlum14':
+        //     resp.json({surname: 'Strauß', firstname: 'Lukas'}); break;
 
-            default:
-                resp.status(404);
-                resp.end(); // schließt den response
+        //     default:
+        //         resp.status(404);
+        //         resp.end(); // schließt den response
 
-        }
+        // }
     }
 
 }
